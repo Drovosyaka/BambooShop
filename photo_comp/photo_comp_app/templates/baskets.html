@@ -1,0 +1,62 @@
+{% if basket %}
+<h4 class="mt-3 mb-3 d-flex text-light justify-content-between align-items-center mb-3">
+                Корзина <span class="badge badge-secondary badge-pill">3</span>
+            </h4>
+           <div class="card mb-3">
+               <div class="card-body">
+                   <h5 class="card-title">Product name</h5>
+                   <p class="card-text">Product description</p>
+               </div>
+               <ul class="list-group list-group-flush">
+                   <li class="list-group-item bg-light">
+                       <div class="row text-center">
+                           <div class="col-lg-4">
+                               <input name="basketID" type="number" class="form-control"
+                                      value="1" min="0">
+                           </div>
+                           <div class="col-lg-4">2 390 руб.</div>
+                           <div class="col-lg-4">
+                               <a href="#">
+                                   <i class="fas fa-trash"></i>
+                               </a>
+                           </div>
+                       </div>
+                   </li>
+               </ul>
+           </div>
+           <div class="card mb-3">
+               <div class="card-footer">
+                   <p class="float-left">Итого</p>
+                   <h4 class="float-right">2 390 руб.</h4>
+               </div>
+           </div>
+      <p>
+          <form>
+             <label style="text-color: white" for="fruits"> Выберите адрес, откуда будете забирать заказ:</label>
+             <select id="fruits" name="fruits">
+               <option value="ciolocovskogo_57_2">Циолковского 57/2</option>
+               <option value="ciolocovskogo_57_4">Циолковского 57/4</option>
+               <option value="shorsa_62">Щорса 62</option>
+                 <option value="akademica_shvartsa_17_4">Академика Шварца 17/4</option>
+                 <option value="zavodskaya_75_2_5ka">Заводская 75/2 «Пятёрочка»</option>
+                 <option value="sheikmana_119_5ka">Шейнкмана 119 «Пятёрочка»</option>
+                 <option value="lenina_5k1_5ka">Ленина 5к1 «Пятёрочка»</option>
+                 <option value="lenina_24_8_red_leon">Ленина 24/8 ТЦ «Красный Леопард»</option>
+                 <option value="azina_22_7_5ka">Азина 22/7 «Пятёрочка»</option>
+                 <option value="pos_kashino_malahit_2_5ka">Пос. Кашино, Малахитовая 2 «Пятёрочкa»</option>
+             </select>
+           </form>
+          <input name="phone_number" placeholder="Введите ваше Имя" required="required">
+          <input style="position: absolute" type="tel" name="phone_number" placeholder="+7 (900) 123-45-67" pattern="\+7\s?[\(]{0,1}9[0-9]{2}[\)]{0,1}\s?\d{3}[-]{0,1}\d{2}[-]{0,1}\d{2}">
+      </p>
+           <a class="btn btn-success btn-lg float-right" href="../orders/order-create.html">
+               Подтвердить заказ
+           </a>
+       <a class="close" title="Закрыть" href="#close"></a>
+
+{% else %}
+<h4 class="mt-3 mb-3 text-center text-light">
+    Корзина пуста
+</h4>
+{% endif %}
+

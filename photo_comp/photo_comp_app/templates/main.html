@@ -1,0 +1,143 @@
+{% load static %}
+<!doctype html>
+<html lang=ru>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Табак 18+</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQpVLFsy3k+6mhlJVK/RKyV5UrHRDwt/s7LZZstwJXfYVqpmHxy7VR2vtiMzFxJJA8DVXzK+" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="{% static 'main/css/main.css' %}" type="text/css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/js-cookie@2.2.1/src/js.cookie.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body class="bg-secondary bg-gradient" style="background-image: url(https://media.istockphoto.com/vectors/seamless-vape-pattern-vector-id672618176?k=20&m=672618176&s=170667a&w=0&h=wPQJ4DS63mSWhr1MhyGkRSjgzUkYwb3F6efPkegvBE4=)">
+    <div class="overlayyy">
+        <div class="modalll">
+            <h2>Подтверждение возраста</h2>
+            <div class="age-popup__center">
+                <div class="age-popup__question">вам уже исполнилось 18 лет?</div>
+                <div class="age-popup__control">
+                    <a id="yesButtonnn" class="age-popup__button age-popup__button--yes js-confirm-age"><span>Да</span></a>
+                    <a id="noButtonnn" href="https://www.youtube.com/watch?v=PceybJUGgVc&amp;feature=youtu.be" class="age-popup__button age-popup__button--no"><span>Нет</span></a>
+                </div>
+            </div>
+            <div class="age-popup__bottom">
+                <div class="age-popup__age">
+                    <span>18+</span>
+                </div>
+                <div class="age-popup__desc">Продукция, представленная на сайте bambucoshop.ru предназначена только для лиц достигших 18 лет. Нажимая на кнопку «да» вы подтверждаете свое совершеннолетие.</div>
+            </div>
+        </div>
+    </div>
+    <nav id="desktop-only" class="navbar navbar-dark sticky-top pl-5 border-bottom border-success" style="background-color: rgba(00, 00, 00); height: 200px; overflow: hidden;">
+        <div>
+            <img style="width: 275px; height: 375px; position: absolute; top: -100px; left: -35px; rotate: 30deg;" class="img-responsive" src="{% static 'main/img/Bamboo.png' %}" alt="bambooco">
+        </div>
+        <a href="/" style="padding-left: 100px;">
+            <img style="width: 350px; height: 150px;" src="{% static 'main/img/LOGO.jpg' %}" alt="logo">
+        </a>
+        <div id="mobile-only" class="text-white display: block; margin-left: auto; margin-right: auto;">
+            <img style="width: 200px; height: 100px; " src="{% static 'main/img/LOGO.jpg' %}" alt="logo">
+        </div>
+
+        <!--<form class="form-inline my-2 my-lg-1 text-center">
+                <input class="form-control mr-sm-2" style="height: 50px; width: 300px;" type="search" placeholder="Поиск по товару" aria-label="Search">
+                <button class="btn btn-outline-success my-2 my-sm-0" style="height: 50px; width: 100px;" type="submit">Поиск</button>
+        </form>-->
+
+        <form style="padding-left: 0;" class="text-light my-2 my-lg-0 pr-5">
+            <h4 style="font-family: sans-serif;">Телефон для связи: +7 (923) 101 10-10</h4>
+        </form>
+
+        <a href="https://vk.com/bambuco.shop" style="padding-right: 200px;">
+            <img style="width: 100px; height: 100px;" src="{% static 'main/img/VK.png' %}" alt="https://vk.com/bambuco.shop?from=search">
+        </a>
+
+        <div>
+            <img style="width: 275px; height: 375px; position: absolute; top: -75px; right: -25px; rotate: -35deg;" class="img-responsive" src="{% static 'main/img/Bamboo.png' %}" alt="bambooco">
+        </div>
+    </nav>
+{% block content %}
+    <!--
+    <div class="cookie-block">
+            <button class="ok">Да</button>
+    </div>
+    -->
+
+    <div class="container-fluid">
+        <div class="row rowBg align-items-center justify-content-center p-5">
+            <a class="a_css_cat" href="{% url 'pod' %}">
+                <img class="mr-5 ml-5 mt-5 img_css_cat" src="{% static 'main/img/category/Podiki.png' %}" alt="test">
+                <div class="text-justify font-weight-light text-center text-light h5 div_css_cat">Многорозовые Эл. Системы</div>
+            </a>
+            <a class="a_css_cat" href="{% url 'disposable' %}">
+                <img class="mr-5 ml-5 mt-5 img_css_cat" src="{% static 'main/img/category/Odnorazka.png' %}" alt="test">
+                <div class="text-justify font-weight-light text-center text-light h5 div_css_cat">Одноразовые Эл. Сигареты</div>
+            </a>
+            <a class="a_css_cat" href="{% url 'vape_juice' %}">
+                <img class="mr-5 ml-5 mt-5 img_css_cat" src="{% static 'main/img/category/Zhiza.png' %}" alt="test">
+                <div class="text-justify font-weight-light text-center text-light h5 div_css_cat">Жидкости</div>
+            </a>
+            <a class="a_css_cat" href="{% url 'consumables' %}">
+                <img class="mr-5 ml-5 mt-5 img_css_cat" src="{% static 'main/img/category/Acc_Podiki.png' %}" alt="test">
+                <div class="text-justify font-weight-light text-center text-light h5 div_css_cat">Расходники к Эл. Системам</div>
+            </a>
+            <a class="a_css_cat" href="{% url 'hookah' %}">
+                <img class="mr-5 ml-5 mt-5 img_css_cat" src="{% static 'main/img/category/Hookah.png' %}" alt="test">
+                <div class="text-justify font-weight-light text-center text-light h5 div_css_cat">Кальяны</div>
+            </a>
+            <a class="a_css_cat" href="{% url 'tobacco_free_mixtures' %}">
+                <img class="mr-5 ml-5 mt-5 img_css_cat" src="{% static 'main/img/category/Tobacco_free.png' %}" alt="test">
+                <div class="text-justify font-weight-light text-center text-light h5 div_css_cat">Бестабачные смеси для кальяна</div>
+            </a>
+            <a class="a_css_cat" href="{% url 'tobacco' %}">
+                <img class="mr-5 ml-5 mt-5 img_css_cat" src="{% static 'main/img/category/Tobacco.png' %}" alt="test">
+                <div class="text-justify font-weight-light text-center text-light h5 div_css_cat">Табаки для кальяна</div>
+            </a>
+            <a class="a_css_cat" href="{% url 'goal' %}">
+                <img class="mr-5 ml-5 mt-5 img_css_cat" src="{% static 'main/img/category/Ugli.png' %}" alt="test">
+                <div class="text-justify font-weight-light text-center text-light h5 div_css_cat">Угли для кальяна</div>
+            </a>
+            <a class="a_css_cat" href="{% url 'accessory' %}">
+                <img class="mr-5 ml-5 mt-5 img_css_cat" src="{% static 'main/img/category/Accessories.png' %}" alt="test">
+                <div class="text-justify font-weight-light text-center text-light h5 div_css_cat">Аксессуары для кальяна</div>
+            </a>
+        </div>
+    </div>
+{% endblock %}
+    <footer class="container-fluid pb-4" style="background-color: rgba(00, 00, 00, 0.7);">
+        <div>
+            <ul class="text-light h3 text-center p-3">
+                Наши адреса в г. Екатеринбурге:
+            </ul>
+        </div>
+        <div class="row rowBg text-light h5 desktop-only justify-content-center mx-4">
+            <a class="mr-5 ml-5 mt-1 h5" style="display: inline;">Циолковского 57/2</a>
+            <a class="mr-5 ml-5 mt-1 h5" style="display: inline;">Циолковского 57/4</a>
+            <a class="mr-5 ml-5 mt-1 h5" style="display: inline;">Щорса 62</a>
+            <a class="mr-5 ml-5 mt-1 h5" style="display: inline;">Академика Шварца 17/4</a>
+            <a class="mr-5 ml-5 mt-1 h5" style="display: inline;">Заводская 75/2 «Пятёрочка»</a>
+            <a class="mr-5 ml-5 mt-1 h5" style="display: inline;">Шейнкмана 119 «Пятёрочка»</a>
+            <a class="mr-5 ml-5 mt-1 h5" style="display: inline;">Ленина 5к1 «Пятёрочка»</a>
+            <a class="mr-5 ml-5 mt-1 h5" style="display: inline;">Ленина 24/8 ТЦ «Красный Леопард»</a>
+            <a class="mr-5 ml-5 mt-1 h5" style="display: inline;">Азина 22/7 «Пятёрочка»</a>
+            <a class="mr-5 ml-5 mt-1 h5" style="display: inline;">Пос. Кашино, Малахитовая 2 «Пятёрочкa»</a>
+        </div>
+    </footer>
+
+    <a href="#win1" class="button button-blue">
+        <img id="cartIcon" src="{% static 'main/img/Basket.png' %}" alt="test">
+    </a>
+
+    <a href="#x" class="overlay" id="win1"></a>
+   <div class="popup">
+        {% include 'baskets.html' %}
+    </div>
+
+<script src="{% static 'main/js/main.js' %}"></script>
+</body>
+</html> 

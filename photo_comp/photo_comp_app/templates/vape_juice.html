@@ -1,0 +1,25 @@
+{% extends 'main.html' %}
+{% load static %}
+<!--Жидкость для вейпа-->
+{% block content %}
+<div class="container-fluid">
+    <div class="row rowBg align-items-center justify-content-center p-5">
+        {% if object_models %}
+        {% for el in object_models %}
+            <div>
+                <img class="mr-5 ml-5 mt-5 img_css_cat" src="http://127.0.0.1:8000/media/{{ el.image }}" alt="test">
+                <div class="div_css_cat">
+                    <div class="text-justify font-weight-light text-center text-light h5" >{{ el.name }}</div>
+                    <div class="text-justify font-weight-light text-center text-light h5" >Цена: {{ el.price }}р.</div>
+                    <div class="text-justify font-weight-light text-center text-light h5">
+                        <a class="btn btn-outline-success" href="{% url 'basket_add' el.id %}">Добавить в корзину</a>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+        {% else %}
+            <div class="text-justify font-weight-light text-center h5 alert alert-warning">Товар в данной категории ещё не добавлен!</div>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}
