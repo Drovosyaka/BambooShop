@@ -1,27 +1,29 @@
-"""
-URL configuration for photo_comp project.
-
-The `urlpatterns` list routes URLs to views. For more information please see:
-    https://docs.djangoproject.com/en/4.2/topics/http/urls/
-Examples:
-Function views
-    1. Add an import:  from my_app import views
-    2. Add a URL to urlpatterns:  path('', views.home, name='home')
-Class-based views
-    1. Add an import:  from other_app.views import Home
-    2. Add a URL to urlpatterns:  path('', Home.as_view(), name='home')
-Including another URLconf
-    1. Import the include() function: from django.urls import include, path
-    2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
-"""
 from django.contrib import admin
 from django.urls import path, include, re_path
 from photo_comp_main.views import *
+from photo_comp_app.views import *
+from django.conf import settings
+from django.conf.urls.static import static
 from rest_framework import routers
 
 
 
 urlpatterns = [
+    path('', home, name='home'),
+    path('pod/', pod, name='pod'),
+    path('disposable/', disposable, name='disposable'),
+    path('vape_juice/', vape_juice, name='vape_juice'),
+    path('consumables/', consumables, name='consumables'),
+
+    path('hookah/', hookah, name='hookah'),
+    path('tobacco_free_mixtures/', tobacco_free_mixtures, name='tobacco_free_mixtures'),
+    path('tobacco/', tobacco, name='tobacco'),
+    path('goal/', goal, name='goal'),
+    path('accessory/', accessory, name='accessory'),
+
+    path('test/', test, name='test'),
+
+    path('accounts/profile/', profile),
     path('admin/', admin.site.urls),
     path('api/v1/drf-auth/', include('rest_framework.urls')),
     path('api/v1/photocomp/', PhotoCompAPIList.as_view()),
@@ -30,4 +32,12 @@ urlpatterns = [
     path('api/v1/auth/', include('djoser.urls')),
     path('api/v1/auth/', include('djoser.urls.jwt')),
     re_path(r'^auth/', include('djoser.urls.authtoken')),
+
+    path('baskets/add/<int:product_id>/', basket_add, name='basket_add'),
 ]
+
+if settings.DEBUG:
+    urlpatterns += static(
+        settings.MEDIA_URL,
+        document_root=settings.MEDIA_ROOT
+    )

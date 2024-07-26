@@ -1,29 +1,42 @@
+from django.core.checks import messages
 from django.forms import model_to_dict
+from django.template import RequestContext
 from rest_framework import generics, viewsets
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from rest_framework.decorators import action
 from rest_framework.permissions import *
 from rest_framework.response import Response
 from rest_framework.views import APIView
-from .models import PhotoComp, Category
+
+from photo_comp_app.forms import UserRegisterForm
+from .models import *
 from .permissions import *
 from .serializers import PhotoCompSerializer
 
+
 class PhotoCompAPIList(generics.ListCreateAPIView):
-    queryset = PhotoComp.objects.all()
+    queryset = Categories.objects.all()
     serializer_class = PhotoCompSerializer
-    permission_classes = (IsAuthenticatedOrReadOnly, )
+    permission_classes = (IsAuthenticatedOrReadOnly,)
+
 
 class PhotoCompAPIUpdate(generics.RetrieveUpdateAPIView):
-    queryset = PhotoComp.objects.all()
+    queryset = Categories.objects.all()
     serializer_class = PhotoCompSerializer
-    permission_classes = (IsAuthenticated, )
+    permission_classes = (IsOwnerOrPermissionOnly,)
+
 
 class PhotoCompAPIDestroy(generics.RetrieveDestroyAPIView):
-    queryset = PhotoComp.objects.all()
+    queryset = Categories.objects.all()
     serializer_class = PhotoCompSerializer
-    permission_classes = (IsAdminOrReadOnly, )
+    permission_classes = (IsAdminOrReadOnly,)
 
+
+def Basket(request):
+    context = {
+        'basket': Basket.objects.all(),
+    }
+    return render(request, 'main.html', context)
 #class PhotoCompAPIView(APIView):
 #    def get(self, request):
 #        w = PhotoComp.objects.all()
