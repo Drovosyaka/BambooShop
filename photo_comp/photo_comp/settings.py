@@ -20,7 +20,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-6b#i5s1y#(^60yri(-9=2(%-kr5fk+f+y3dab03q1l14+e-_o_'
+SECRET_KEY = '#############################################################'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -80,12 +80,12 @@ WSGI_APPLICATION = 'photo_comp.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'VapeShop',
-        'USER': 'administratorvape',
-        'PASSWORD': 'SmokeSelebrity1',
-        'HOST': 'localhost',
-        'PORT': '',
+        'ENGINE': '############################',
+        'NAME': '#####',
+        'USER': '###################',
+        'PASSWORD': '######################',
+        'HOST': '##########',
+        'PORT': '######',
     }
 }
 
@@ -136,9 +136,9 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 EMAIL_USE_TLS = True
-EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_HOST_USER = 'grif.k@mail.com'
-EMAIL_HOST_PASSWORD = 'ZeusFlushaLucky13'
+EMAIL_HOST = '###########'
+EMAIL_HOST_USER = '############'
+EMAIL_HOST_PASSWORD = '###############'
 EMAIL_PORT = 587
 
 DJOSER = {
